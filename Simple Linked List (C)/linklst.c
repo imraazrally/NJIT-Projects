@@ -43,10 +43,6 @@ void split_line(char * line){
 	int pos=0, views=0, len=0;
 	char * token=NULL;
 	char * tmp_string=NULL;
-	char * user=NULL;
-	char * dur=NULL	;
-	char * title=NULL;
-	char * id=NULL;
 	struct clip * tmp=NULL;
 	struct clip * current=NULL;
 	tmp=malloc(sizeof(struct clip));
