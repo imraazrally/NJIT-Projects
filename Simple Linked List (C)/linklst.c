@@ -25,6 +25,8 @@ int main(int argc, char *argv[])
 }
 
 void getdata(){
+    //Opens file and reads line by line. For each line, calling the split_line function
+    
     FILE * file=fopen("youtube.csv", mode);
 	char * mode="r";
 	char line[255]="";
@@ -40,6 +42,8 @@ void getdata(){
 }
 
 void split_line(char * line){
+    //Uses strtok() to split line into 4 fields and store the values into a CLIP struct
+    //Appends the CLIP Struct 
 	int pos=0, views=0, len=0;
 	char * token=NULL;
 	char * tmp_string=NULL;
