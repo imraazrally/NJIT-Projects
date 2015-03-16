@@ -1,0 +1,392 @@
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $a_3b$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : a  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : _  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : $  Popped:        $  Pushed:(epsilon)  Current State:q5
+ACCEPTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $ba76_+r*d3-fg_45n/hi6$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : a  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 7  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 6  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : _  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : r  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : d  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : _  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 4  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 5  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : n  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : h  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : i  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 6  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : $  Popped:        $  Pushed:(epsilon)  Current State:q5
+ACCEPTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $ba+c4*7e-f8/h98u$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : a  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : c  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 4  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : 7  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : 8  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : h  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : 9  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : 8  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $(x23g)y33$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : x  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 2  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : y  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $(((r1+er-fs)*j5))*(a2)$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : r  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 1  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : r  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : s  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : j  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 5  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : a  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 2  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : $  Popped:        $  Pushed:(epsilon)  Current State:q5
+ACCEPTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $(t0+wk)*bn)/c1$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 0  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : w  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : k  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : n  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+CRASHED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $(((ui+ej*(vk+ci))/pt)$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : i  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : j  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : v  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : k  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : c  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : i  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : p  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : $  Popped:        $  Pushed:(epsilon)  Current State:q5
+CRASHED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $+g5$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : 5  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $a1a*(mb/(p+kd34e/e3)-fw)+yq/(((rw*y4_b_d-r57ee*t)/y6+ugf))$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : a  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 1  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : a  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : m  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : p  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : k  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : d  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 4  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 3  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : w  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : y  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : q  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : r  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : w  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : y  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 4  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : _  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : _  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : d  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : r  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 5  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 7  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : e  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : y  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 6  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : $  Popped:        $  Pushed:(epsilon)  Current State:q5
+ACCEPTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $g0*(hs+(df-*ft))$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 0  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : h  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : s  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : d  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : f  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : )  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : )  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $(tg+(hy-j7))/uk)*ri+(eo/wp$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : h  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : y  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : j  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 7  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : k  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+CRASHED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $(tg+(hy-j9))/uk)ri$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : g  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : h  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : y  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : j  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : 9  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : /  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : k  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+CRASHED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $wm-(tn*bu)+$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : w  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : m  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : (  Popped:(epsilon)  Pushed:        (  Current State:q1
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : n  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : )  Popped:        (  Pushed:(epsilon)  Current State:q4
+Read  : +  Popped:(epsilon)  Pushed:(epsilon)  Current State:q1
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $wm-tn(*bu)$
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : w  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : m  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : n  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : (  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : )  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): Please enter string : 
+String: $wm-)tn*bu($
+--------------------------------
+
+Start State: q0
+Read  : $  Popped:(epsilon)  Pushed:        $  Current State:q1
+Read  : w  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : m  Popped:(epsilon)  Pushed:(epsilon)  Current State:q2
+Read  : -  Popped:(epsilon)  Pushed:(epsilon)  Current State:q3
+Read  : )  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : t  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : n  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : *  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : b  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : u  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : (  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+Read  : $  Popped:(epsilon)  Pushed:(epsilon)  Current State:q6
+REJECTED
+
+
+Do you want to enter a string ? Y (yes) or N (no): 
