@@ -72,3 +72,5 @@ This way, upon understanding the value encoding, the rest is simple.
 	   ****Every VALUE in the TABLE is an INSTRUCTION********
 ---------------------------------------------------------------------------------------------------------
 	
+
+SUPPORT: mail@imraazrally.com
