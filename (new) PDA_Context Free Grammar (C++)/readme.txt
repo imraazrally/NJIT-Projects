@@ -1,4 +1,5 @@
 Documentation by Imraaz Rally
+Support: mail@imraazrally.com
 -----------------------------
 -This Project implements a Pushdown Automata (PDA) with a Stack that recognizes the following Context-free Grammar(CFG).
 
@@ -13,7 +14,7 @@ NOTE:
      - The drawing of the PDA is hosted as "PDA_drawing.pdf" under current working directory
 
 
----------------------TRANSITION TABLE (designed by Imraaz Rally)------------------------------------------------------------
+---------------------TRANSITION TABLE (designed by Imraaz Rally)----------------------------------------
         			 |  $   | {+,-,/,* } | {0-9} u{_} | {a-z}|   (   |  )  |  Other |   
 			-------------------------------------------------------------------------
 			   Q0    |1~$   | "6~~"      |"6~~"       |"6~~" | "6~~" |      |      | 
@@ -32,7 +33,7 @@ NOTE:
  			-------------------------------------------------------------------------
 	
 
---------------------Understanding the Transition Table--------------------------------------------------------------------
+--------------------Understanding the Transition Table----------------------------------------------------
 
 Suppose simple PDA, Alphabet = {$}
 
