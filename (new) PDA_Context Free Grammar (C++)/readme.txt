@@ -3,11 +3,11 @@ Documentation by Imraaz Rally
 -Documented, Designed, and Coded by Imraaz Rally 
 -This Project implements a Pushdown Automata (PDA) with a Stack that recognizes the following Context-free Grammar(CFG).
 
-S ? $T$
-T ? T+T | T-T | T*T | T/T | (T) | CX
-X ? XX | C | N | _ | e
-C ? a | b | c | · · · | z
-N ? 0 | 1 | 2 | · · · | 9
+S -> $T$
+T -> T+T | T-T | T*T | T/T | (T) | CX
+X -> XX | C | N | _ | e
+C -> a | b | c | · · · | z
+N -> 0 | 1 | 2 | · · · | 9
 
 NOTE: 
      - Restrictions->The PDA, needs to be DETERMINISTIC (DFA) not an (NFA).
