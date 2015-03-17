@@ -1,6 +1,5 @@
 Documentation by Imraaz Rally
 -----------------------------
--Documented, Designed, and Coded by Imraaz Rally 
 -This Project implements a Pushdown Automata (PDA) with a Stack that recognizes the following Context-free Grammar(CFG).
 
 S -> $T$
