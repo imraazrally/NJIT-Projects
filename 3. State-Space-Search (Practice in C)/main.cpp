@@ -3,30 +3,16 @@
 #include <string.h>
 #include "Search.h"
 
+void search_strategy(int argc, char ** argv);
+
 int main(int argc, char **argv)
 {	 
    int iter=0;
    struct node *tsucc,*csucc,*copen,*topen,*open,*closed,*succ;
    open=closed=succ=NULL;
-   
-   // Using Commandline Arguments to Determine Search Strategy
-   if (strcmp(argv[argc-1],"bfs")){
-	   flag=BFS; 
-	   printf("Strategy: BFS "); 
-   }else if (strcmp(argv[argc-1],"dfs")){
-	   flag=DFS;
-		printf("Strategy DFS ");
-   }else{
-	printf("else");
-	   flag=ASTAR;
-   }
-   
    start=initialize(argc, argv); // Initializing the START and GOAL Nodes.
    open=start;                  
    succ=expand(start);           // In the beginning, OPEN only contains the START node. So, Expand it.	
-  
-
-
    while (open!=NULL) {
         copen=open;
       	open=open->next;
@@ -41,4 +27,18 @@ int main(int argc, char **argv)
    }
    printf("%d iterations\n",iter);
    return 0;	
+}
+
+void search_strategy(int argc, char ** argv){
+   // Using Commandline Arguments to Determine Search Strategy
+   if (strcmp(argv[argc-1],"bfs")){
+	   flag=BFS; 
+	   printf("Strategy: BFS "); 
+   }else if (strcmp(argv[argc-1],"dfs")){
+	   flag=DFS;
+       printf("Strategy DFS ");
+   }else{
+	printf("else");
+	   flag=ASTAR;
+   }
 }

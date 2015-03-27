@@ -21,7 +21,7 @@ struct node *merge(struct node *succ,struct node *open,int flag) {
         }
 	    succ->next=open;
 	    return csucc;
-  }else if (flag==BFS) { /* attach to the end: open -> ... -> succ */
+   }else if (flag==BFS) { /* attach to the end: open -> ... -> succ */
 	    if (open==NULL) return succ;
         csucc=open;
         while(csucc->next){
@@ -29,9 +29,9 @@ struct node *merge(struct node *succ,struct node *open,int flag) {
         }
         csucc->next=succ;
         return open;
-  }else {	      /* Best first: insert in asc order of h value */
+   }else {	      /* Best first: insert in asc order of h value */
 
-  }
+   }
 }
 
 
@@ -183,45 +183,44 @@ struct node * move_right(struct node *selected){
 }
 
 void print_a_node(struct node *np) {
-  int i,j, (*mp)[N];
-  mp = np->loc;
-  for (i=0;i<N;i++) {
-    for (j=0;j<N;j++) printf("%2d ",np->loc[i][j]);
+    int i,j, (*mp)[N];
+    mp = np->loc;
+    for (i=0;i<N;i++) {
+       for (j=0;j<N;j++) printf("%2d ",np->loc[i][j]);
+       printf("\n");
+    }
     printf("\n");
-  }
-  printf("\n");
 }
 
 struct node * initialize(int argc, char **argv){
-  int i,j,k,idx;
-  struct node *tp;
+    int i,j,k,idx;
+    struct node *tp;
 
-  tp=(struct node *) malloc(sizeof(struct node));
-  idx = 1;
-  for (j=0;j<N;j++)
-    for (k=0;k<N;k++) tp->loc[j][k]=atoi(argv[idx++]);
-  for (k=0;k<N;k++) tp->loc[N][k]=0;	/* set f,g,h of initial state to 0 */
-  tp->next=NULL;
-  start=tp;
-  printf("initial state\n"); print_a_node(start);
+    tp=(struct node *) malloc(sizeof(struct node));
+    idx = 1;
+    for (j=0;j<N;j++)
+       for (k=0;k<N;k++) tp->loc[j][k]=atoi(argv[idx++]);
+    for (k=0;k<N;k++) tp->loc[N][k]=0;	/* set f,g,h of initial state to 0 */
+    tp->next=NULL;
+    start=tp;
+    printf("initial state\n"); print_a_node(start);
 
-  tp=(struct node *) malloc(sizeof(struct node));
-  idx = 1;
-  for (j=0;j<N;j++)
-    for (k=0;k<N;k++) tp->loc[j][k] = idx++;
-  tp->loc[N-1][N-1] = 0;	      /* empty tile=0 */
-  for (k=0;k<N;k++) tp->loc[N][k]=0;	/* set f,g,h of goal state to 0 */
-  tp->next=NULL;
-  goal=tp; 
-  printf("goal state\n"); print_a_node(goal);
+    tp=(struct node *) malloc(sizeof(struct node));
+    idx = 1;
+    for (j=0;j<N;j++)
+      for (k=0;k<N;k++) tp->loc[j][k] = idx++;
+    tp->loc[N-1][N-1] = 0;	      /* empty tile=0 */
+    for (k=0;k<N;k++) tp->loc[N][k]=0;	/* set f,g,h of goal state to 0 */
+    tp->next=NULL;
+    goal=tp; 
+    printf("goal state\n"); print_a_node(goal);
 
-  return start;	
-
+   return start;	
 }
 
 void print_nodes(struct node *cp) {
-  while (cp) {
-    print_a_node(cp);
-    cp=cp->next;
-  }
+    while (cp) {
+        print_a_node(cp);
+        cp=cp->next;
+    }
 }
