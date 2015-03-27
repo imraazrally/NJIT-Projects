@@ -103,8 +103,8 @@ struct node *expand(struct node *selected) {
 
 struct node * move_up(struct node *selected){
 	int i=0, j=0, tmp=0, mv_idx;
-	struct node* moved= new struct node;
-    //(C compiler)struct node* moved= new struct node;
+    struct node*moved=malloc(sizeof(struct node));
+    
 	for (i=0; i<N; i++){
 		for (j=0; j<N; j++){
 			moved->loc[i][j]=selected->loc[i][j];
@@ -121,8 +121,7 @@ struct node * move_up(struct node *selected){
 
 struct node * move_down(struct node *selected){
 	int i=0, j=0, idx=-1;
-	//(C compiler)struct node* moved= new struct node;
-	struct node* moved= new struct node;
+    struct node*moved=malloc(sizeof(struct node));
 	
 	for (i=0; i<N; i++){
 		for (j=0; j<N; j++){ 
@@ -144,8 +143,7 @@ struct node * move_down(struct node *selected){
 
 struct node * move_left(struct node *selected){
 	int i=0, j=0, idx=-1;
-	//(C compiler)struct node* moved= new struct node;
-	struct node* moved= new struct node;
+    struct node*moved=malloc(sizeof(struct node));
 
 	for (i=0; i<N; i++){
 		for (j=0; j<N; j++){
@@ -161,8 +159,8 @@ struct node * move_left(struct node *selected){
 
 struct node * move_right(struct node *selected){
 	int i=0, j=0;
-	//(C++ compiler)struct node* moved= new struct node;
-    struct node* moved= new struct node;
+	struct node*moved=malloc(sizeof(struct node));
+    
 
 	for (i=0; i<N; i++){
 		for (j=0; j<N; j++){ 
