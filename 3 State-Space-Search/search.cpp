@@ -134,7 +134,7 @@ struct node * initialize(int argc, char **argv){
     goal=tp; 
     printf("goal state\n"); print_a_node(goal);
 
-   return start;	
+    return start;	
 }
 
 void print_nodes(struct node *cp) {
