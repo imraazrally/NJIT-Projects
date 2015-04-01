@@ -24,26 +24,11 @@ int flag; // BFS or DFS or A-STAR
 
 //---------------Function Prototypes----------
 void print_a_node(struct node *np);
-
 void print_nodes(struct node *cp);
-
 struct node * initialize(int argc, char **argv);
-
 struct node *expand(struct node *selected);
-
-struct node * move_up(struct node *selected);
-
-struct node * move_down(struct node *selected);
-
-struct node * move_left(struct node *selected);
-
-struct node * move_right(struct node *selected);
-
 int nodes_same(struct node * a, struct node * b);
-
 struct node * filter(struct node * hp, struct node * succ);
-
 struct node *merge(struct node *succ,struct node *open,int flag);
-
 int goal_found(struct node *cp,struct node *goal);
 #endif

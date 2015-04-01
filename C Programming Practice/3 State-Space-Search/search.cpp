@@ -90,94 +90,15 @@ int nodes_same(struct node * a, struct node * b) {
 
 
 struct node *expand(struct node *selected) {	
-	struct node * up=move_up(selected);
-	struct node * down=move_down(selected);
-	struct node * left=move_left(selected);
-	struct node * right=move_right(selected);
+	struct node * up=move(selected, UP);
+	struct node * down=move(selected, DOWN);
+	struct node * left=move(selected, LEFT);
+	struct node * right=move(selected, RIGHT);
 	up->next=down;
 	down->next=left;
 	left->next=right;
 	right->next=NULL;
 	return up;
-}
-
-struct node * move_up(struct node *selected){
-	int i=0, j=0, tmp=0, mv_idx;
-    struct node*moved=malloc(sizeof(struct node));
-    
-	for (i=0; i<N; i++){
-		for (j=0; j<N; j++){
-			moved->loc[i][j]=selected->loc[i][j];
-			if (selected->loc[i][j]==0 && i!=0){
-				tmp=selected->loc[i-1][j];
-				moved->loc[i-1][j]=selected->loc[i][j];
-				moved->loc[i][j]=tmp;			
-			}
-		}	
-	}
-
-	return moved;
-}
-
-struct node * move_down(struct node *selected){
-	int i=0, j=0, idx=-1;
-    struct node*moved=malloc(sizeof(struct node));
-	
-	for (i=0; i<N; i++){
-		for (j=0; j<N; j++){ 
-			moved->loc[i][j]=selected->loc[i][j];	
-		}	
-	}
-
-	for (i=0; i<N; i++){
-		for (j=0; j<N; j++){ 
-			if (selected->loc[i][j]==0 && i!=N-1){
-				moved->loc[i+1][j]=0;
-				moved->loc[i][j]=selected->loc[i+1][j];	
-			}
-		}	
-	}
-
-	return moved;
-}
-
-struct node * move_left(struct node *selected){
-	int i=0, j=0, idx=-1;
-    struct node*moved=malloc(sizeof(struct node));
-
-	for (i=0; i<N; i++){
-		for (j=0; j<N; j++){
-			moved->loc[i][j]=selected->loc[i][j];
-			if (selected->loc[i][j]==0 && j!=0){
-				moved->loc[i][j-1]=0;
-				moved->loc[i][j]=selected->loc[i][j-1];			
-			}
-		}	
-	}
-	return moved;
-}
-
-struct node * move_right(struct node *selected){
-	int i=0, j=0;
-	struct node*moved=malloc(sizeof(struct node));
-    
-
-	for (i=0; i<N; i++){
-		for (j=0; j<N; j++){ 
-			moved->loc[i][j]=selected->loc[i][j];	
-		}	
-	}
-
-	for (i=0; i<N; i++){
-		for (j=0; j<N; j++){ 
-			if (selected->loc[i][j]==0 && j!=N-1){
-				moved->loc[i][j+1]=0;
-				moved->loc[i][j]=selected->loc[i][j+1];			
-			}
-		}	
-	}
-	moved->next=NULL;
-	return moved;
 }
 
 void print_a_node(struct node *np) {
@@ -213,7 +134,7 @@ struct node * initialize(int argc, char **argv){
     goal=tp; 
     printf("goal state\n"); print_a_node(goal);
 
-   return start;	
+    return start;	
 }
 
 void print_nodes(struct node *cp) {

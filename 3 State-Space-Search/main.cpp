@@ -5,7 +5,8 @@
 #include "Move.h"
 #include "Search.cpp"
 #include "Move.cpp"
-void search_strategy(int argc, char ** argv);
+#include "Heuristic.h"
+#include "Heuristic.cpp"
 
 int main(int argc, char **argv)
 {	 
@@ -22,25 +23,13 @@ int main(int argc, char **argv)
         succ=filter(open,succ);   // Check to see if any of the successors already exist in OPEN
         succ=filter(closed,succ); // Check to see if any of the successors already exist in CLOSED
 	    if (goal_found(succ,goal)) break;
-	    if (succ!=NULL) open=merge(succ,open,flag); // Connect the SUCCESSORS with the PARENTS
+	    if (succ!=NULL) open=merge(succ,open,ASTAR); // Connect the SUCCESSORS with the PARENTS
 	    copen->next=closed;       //Move the current node we just expanded to CLOSED 
         closed=copen;		
         iter++;
    }
    printf("%d iterations\n",iter);
-   return 0;		
+   return 0;				
 }
 
-void search_strategy(int argc, char ** argv){
-   // Using Commandline Arguments to Determine Search Strategy
-   if (strcmp(argv[argc-1],"bfs")){
-	   flag=BFS; 
-	   printf("Strategy: BFS "); 
-   }else if (strcmp(argv[argc-1],"dfs")){
-	   flag=DFS;
-       printf("Strategy DFS ");
-   }else{
-	printf("else");
-	   flag=ASTAR;
-   }
-}
+

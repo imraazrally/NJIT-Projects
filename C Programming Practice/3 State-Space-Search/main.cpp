@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Search.h"
-
+#include "Move.h"
+#include "Search.cpp"
+#include "Move.cpp"
 void search_strategy(int argc, char ** argv);
 
 int main(int argc, char **argv)
@@ -26,7 +28,7 @@ int main(int argc, char **argv)
         iter++;
    }
    printf("%d iterations\n",iter);
-   return 0;	
+   return 0;		
 }
 
 void search_strategy(int argc, char ** argv){

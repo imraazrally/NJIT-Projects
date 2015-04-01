@@ -1,4 +1,5 @@
-
+#include "Search.h"
+#include "Heuristic.h"
 int goal_found(struct node *cp,struct node *goal){ 
     // Comparing IF NODE == GOAL
 	while(cp){
@@ -30,7 +31,7 @@ struct node *merge(struct node *succ,struct node *open,int flag) {
         csucc->next=succ;
         return open;
    }else {	      /* Best first: insert in asc order of h value */
-
+        return sort_merge(succ,open);
    }
 }
 
@@ -94,6 +95,8 @@ struct node *expand(struct node *selected) {
 	struct node * down=move(selected, DOWN);
 	struct node * left=move(selected, LEFT);
 	struct node * right=move(selected, RIGHT);
+	
+	
 	up->next=down;
 	down->next=left;
 	left->next=right;
@@ -108,6 +111,7 @@ void print_a_node(struct node *np) {
        for (j=0;j<N;j++) printf("%2d ",np->loc[i][j]);
        printf("\n");
     }
+    std::cout<<"FVAL: "<<np->f_val<<" \n";
     printf("\n");
 }
 
@@ -131,9 +135,19 @@ struct node * initialize(int argc, char **argv){
     tp->loc[N-1][N-1] = 0;	      /* empty tile=0 */
     for (k=0;k<N;k++) tp->loc[N][k]=0;	/* set f,g,h of goal state to 0 */
     tp->next=NULL;
+    //tp->h_val=calc_manhattan(tp,goal);
     goal=tp; 
     printf("goal state\n"); print_a_node(goal);
 
+    
+    start->h_val=calc_manhattan(start,goal);
+    start->g_val=0;
+    start->f_val=start->h_val+start->g_val;
+    
+    goal->h_val=0;
+    goal->g_val=0;
+    goal->f_val=0;
+    
     return start;	
 }
 

@@ -17,6 +17,9 @@
 struct node {
   int loc[N+1][N];		
   struct node *next;
+  int h_val;
+  int g_val;
+  int f_val;
 };
 
 struct node *start, *goal; // Intitial State - Goal State
