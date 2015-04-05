@@ -4,7 +4,7 @@ What is NxN Sliding Tile Puzzle ?"A sliding puzzle, sliding block puzzle, or sli
 
 A solved 4X4 Sliding Tile Puzzle will look like,  
 
-![](img\solved.png)  
+![](\img\solved.png)  
 
 This program will take in the command line arguments,  
 
