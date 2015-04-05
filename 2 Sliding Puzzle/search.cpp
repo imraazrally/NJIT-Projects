@@ -1,5 +1,7 @@
 #include "Search.h"
 #include "Heuristic.h"
+
+
 int goal_found(struct node *cp,struct node *goal){ 
     // Comparing IF NODE == GOAL
 	while(cp){
@@ -13,6 +15,10 @@ int goal_found(struct node *cp,struct node *goal){
 
 
 struct node *merge(struct node *succ,struct node *open,int flag) {
+    // Merging the NODES based on the SEARCH STRATEGY    
+    // DFS will always expand the successors first. 
+    // BFS will always finish LEVEL by LEVEL
+    // A-Star (intelligent) search will look for the BEST possible node sorted by f() value
     struct node *csucc,*copen;
     if (flag==DFS) {	/* attach to the front: succ -> ... -> open */
         if (succ==NULL) return open;	
@@ -37,6 +43,7 @@ struct node *merge(struct node *succ,struct node *open,int flag) {
 
 
 struct node * filter(struct node * hp, struct node * succ){
+// Given two lists of PUZZLES (A,B) return ONLY the puzzles in B that are NOT already in A. 
 	int dup_found=0;	
 	struct node * current=hp;
 	struct node * tp;
@@ -73,13 +80,12 @@ struct node * filter(struct node * hp, struct node * succ){
 		}			
 		current=hp;	
 	}
-	
     return unique;	
-
 } 
 
 
 int nodes_same(struct node * a, struct node * b) {
+    // Comparing TWO Puzzles
   	int i=0, j=0;
   	for (i=0; i<N; i++){
 		for (j=0; j<N; j++){
@@ -90,7 +96,16 @@ int nodes_same(struct node * a, struct node * b) {
 }
 
 
-struct node *expand(struct node *selected) {	
+struct node *expand(struct node *selected) {
+    // Given a PUZZLE, generate the successors.
+    /*              (left)  (right)    So on
+       ex: 1 2 3    1 2 3    1 2 3     ......
+           4 0 5    0 4 5    4 5 0     ......
+           6 7 8    6 7 8    6 7 8
+    
+    Return Successors---> (up)-->(down)->(left)-->(right)--->NULL
+    
+    */   
 	struct node * up=move(selected, UP);
 	struct node * down=move(selected, DOWN);
 	struct node * left=move(selected, LEFT);

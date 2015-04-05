@@ -1,7 +1,11 @@
 #include "Heuristic.h"
 #include "Search.h"
 #include "Move.h"
+
 int find_index(struct node * tile, table_index idx, int lookup){
+    // Param: (A Puzzle, COL/ROW, lookupVal)
+    // The function will look for the lookupVal in the puzzle 
+    // and return the COL index or ROW index 
     switch (idx){
            case ROW:  
                 
@@ -23,6 +27,7 @@ int find_index(struct node * tile, table_index idx, int lookup){
 }
 
 int calc_manhattan(struct node * tile, struct node * goal){
+     // This function will calculate the MANHATTAN DISTANCE
      int manhattan_cnt=0;
      int goal_row=0; // Row Position in Goal  that you need to be
      int goal_col=0; // Col Position in Goal that you need to be
@@ -38,6 +43,7 @@ int calc_manhattan(struct node * tile, struct node * goal){
 }
 
 struct node * sort_merge(struct node * succ, struct node * open){
+
      struct node * tp, *sorted, *tmp_sorted;
      int lst_count;
      // UNSORTED MERGE
@@ -72,7 +78,8 @@ int list_count(struct node * lst){
     return cnt;
 }
 
-struct node * min_node(struct node *& lst){ // Will return the index the min_val in a linked list
+struct node * min_node(struct node *& lst){ 
+    // This function will take as input a LIST of PUZZLES and POP() the puzzle with the minimum f() val and return it.   
     struct node * tp=lst;
     struct node * cp=lst;
     struct node * ret_tile=new node;

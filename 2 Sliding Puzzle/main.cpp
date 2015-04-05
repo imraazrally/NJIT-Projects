@@ -3,10 +3,9 @@
 #include <string.h>
 #include "Search.h"
 #include "Move.h"
-#include "Search.cpp"
 #include "Move.cpp"
 #include "Heuristic.h"
-#include "Heuristic.cpp"
+
 
 int main(int argc, char **argv)
 {	 

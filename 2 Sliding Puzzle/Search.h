@@ -17,9 +17,9 @@
 struct node {
   int loc[N+1][N];		
   struct node *next;
-  int h_val;
-  int g_val;
-  int f_val;
+  int h_val; // Estimated distance to END Configuration
+  int g_val; // How far traveled
+  int f_val; // Hueristic Priority 
 };
 
 struct node *start, *goal; // Intitial State - Goal State
