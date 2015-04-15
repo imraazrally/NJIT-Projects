@@ -1,18 +1,22 @@
-#include <cstdlib>
 #include <iostream>
-#include <sstream>
 #include <vector>
+#include <sstream>
+#include <cmath>
 typedef std::vector <std::string> __VECSTRING;
 typedef enum {BRACES,BRACKET} strip_type;
 typedef enum {ALL_STATES, ACCEPT_STATES, ALL_SYMBOLS} state_type;
 //FUNCTION PROTOTYPES
+class DFA;
 int item_cnt(std::string);
 __VECSTRING get_items(std::string encoding);
 std::string ret_split(std::string word, char delim, int & iter_pos);
 std::string strip_char(std::string encoding, strip_type ch_type);
+int state_found(__VECSTRING lst, std::string state);
+int Edfa(DFA & dfa);
 
 class DFA{
       public:
+             int ** transition;
              DFA();
              DFA(std::string encoding){ // A DFA takes in an Appropriately Encoding (Assume Encoding Correct) String.
                    encoded=encoding;
@@ -94,8 +98,16 @@ class DFA{
              }
              
              void insert_transition(__VECSTRING trans_vec){
-                  //Fill the transition table
-                  transition[int((trans_vec[0][1]))-'0'][get_symbol_col(trans_vec[1])]=int(trans_vec[2][1])-'0';
+                     int tmp_from=0;
+                     int tmp_to=0;
+                     // Inserting the transition into the table
+                     transition[string_to_int(trans_vec[0])][get_symbol_col(trans_vec[1])]=string_to_int(trans_vec[2]);           
+             }
+             
+             int string_to_int(std::string number){
+                  int to_int;
+                  for (unsigned i=1; i<number.length(); i++) to_int+= (int(number[i])-'0') * pow(10,number.length()-(i+1));
+                  return to_int;
              }
              
              void print_transitions(){
@@ -115,10 +127,9 @@ class DFA{
                   std::cout<<"____________\n\n";
              }
              
-             void print_vec(state_type type){
-                  __VECSTRING vec;
-                  
-                  switch(type){
+             __VECSTRING get_states(state_type type){
+                   __VECSTRING vec;
+                   switch(type){
                         case ALL_STATES:
                                     vec=Qstates;
                                     break;
@@ -127,8 +138,11 @@ class DFA{
                                     break;
                         case ALL_SYMBOLS:
                                     vec=SYMBOLS;
-                  }
-                  
+                  }  
+                  return vec;
+             }
+             
+             void print_vec(__VECSTRING vec){ 
                   for (unsigned i=0; i<vec.size(); i++){
                       std::cout<<vec[i]<<" ";
                   }std::cout<<"\n";
@@ -142,9 +156,6 @@ class DFA{
                   return 0;
              }
              
-             void insert_transition(int state_in, int symbol_read, int state_to){
-                   transition[state_in][symbol_read]=state_to;
-             }
              int get_value(int state_in, int symbol_read){
                    return transition[state_in][symbol_read];
              }
@@ -156,9 +167,12 @@ class DFA{
                   curr_state=state;
              }
              
+             int get_sizeof_states(__VECSTRING vec){
+                  return vec.size();
+             }
+             
       private:
              std::string encoded;
-             int ** transition;
              int init_state;
              int curr_state;
              __VECSTRING Qstates;
@@ -170,10 +184,40 @@ class DFA{
 
 int main(int argc, char *argv[])
 {
-    DFA imraaz("{q0,q1,q2,q3,q4},{0,1},{(q0,0,q1),(q0,1,q2),(q1,0,q0),(q1,1,q2),(q2,0,q0),(q2,1,q1),(q3,0,q0),(q3,1,q1),(q4,0,q1),(q4,1,q2)},q0,{q3,q4}"); 
+    DFA imraaz("{q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10},{0,1},{(q0,0,q8),(q0,1,q2),(q1,0,q0),(q1,1,q10),(q2,0,q0),(q2,1,q6),(q3,0,q2),(q3,1,q1),(q4,0,q5),(q4,1,q10),(q5,0,q4),(q5,1,q3),(q6,0,q2),(q6,1,q2),(q7,0,q6),(q7,1,q2),(q8,0,q3),(q8,1,q0),(q9,0,q10),(q9,1,q5),(q10,0,q9),(q10,1,q8)},q0,{q4,q7}"); 
+    imraaz.print_transitions();
+    Edfa(imraaz);
     system("PAUSE");
     return 0;
 }
+
+int Edfa(DFA & dfa){
+    std::stringstream out;
+    std::string in_state;
+    __VECSTRING open_lst;
+    out<<dfa.get_init_state(); // INT to STR
+    
+    open_lst.push_back("q"+out.str()); // Initiall, the open_lst contains only the initial state. (which can be reaches from itself)
+    dfa.print_vec(open_lst);
+    
+    for (unsigned i=0; i<open_lst.size(); i++){
+        for (unsigned j=0; j<dfa.get_sizeof_states(dfa.get_states(ALL_SYMBOLS)); j++){
+            out.str("");
+            out<<dfa.transition[dfa.string_to_int(open_lst[i])][j];
+            in_state="q"+out.str();
+            if (!state_found(open_lst,in_state)) open_lst.push_back(in_state);
+        }
+        dfa.print_vec(open_lst);
+    }
+}
+
+int state_found(__VECSTRING lst, std::string state){
+    for (unsigned i=0; i<lst.size(); i++){
+        if (lst[i]==state) return 1;
+    }
+    return 0;
+}
+
 
 std::string strip_char(std::string encoding, strip_type ch_type){
     //Function to strip a string out of either [Braces] or [Brackets]
