@@ -13,11 +13,10 @@ std::string ret_split(std::string word, char delim, int & iter_pos);
 std::string strip_char(std::string encoding, strip_type ch_type);
 int state_found(__VECSTRING lst, std::string state);
 int Edfa(DFA & dfa);
-int TEST_EDFA(std::string encoding);
 
 class DFA{
       public:
-             int ** transition; // #Dynamic 2D Array
+             int ** transition;
              DFA();
              DFA(std::string encoding){ // A DFA takes in an Appropriately Encoding (Assume Encoding Correct) String.
                    encoded=encoding;
@@ -67,11 +66,17 @@ class DFA{
              void tokenize_transition(std::string line){
                   // The parameter string will be in the format "(q1,a,q2),(q3,b,q1),....."
                   int size=0;
+                  int counter=0;
+                  __VECSTRING single_transition;
+                  std::string token="";
                  /*WHILE There are more transitions 
                    1. Split String using ")" as a delim-> will return "(q1,a,q2"
                      2. Strip any unnecessory brackets. --> will return "q1,a,q2"
                      3. call fill_transition(string returned in STEP2);  
                   */
+                  
+                  fill_transition(strip_char(ret_split(line,')',size), BRACKET));
+                  size++;
                   while(size<line.length()){
                         fill_transition(strip_char(ret_split(line,')',size),BRACKET));
                         size++;
@@ -99,7 +104,7 @@ class DFA{
                      transition[string_to_int(trans_vec[0])][get_symbol_col(trans_vec[1])]=string_to_int(trans_vec[2]);           
              }
              
-             int string_to_int(std::string number){ //Converts A state str(Q123) to -> int(123)
+             int string_to_int(std::string number){
                   int to_int;
                   for (unsigned i=1; i<number.length(); i++) to_int+= (int(number[i])-'0') * pow(10,number.length()-(i+1));
                   return to_int;
@@ -144,7 +149,6 @@ class DFA{
              }
              
              int get_symbol_col(std::string ch){
-                  // Given a Symbol, which index in the column does it belong to ?
                   for (unsigned i=0; i<SYMBOLS.size();i++){
                       if (SYMBOLS[i]==ch) return i;
                   }
@@ -155,8 +159,12 @@ class DFA{
              int get_value(int state_in, int symbol_read){
                    return transition[state_in][symbol_read];
              }
-             int get_init_state(){ // Return Initial State
+             int get_init_state(){
                    return init_state;
+             }
+             
+             void set_curr_state(int state){
+                  curr_state=state;
              }
              
              int get_sizeof_states(__VECSTRING vec){
@@ -176,54 +184,11 @@ class DFA{
 
 int main(int argc, char *argv[])
 {
-    std::string dfa_encoding="";
-    bool bye=0;
-    char choice;
-    
-    while(bye!=1){
-        std::cout<<"Do you want to TEST a DFA ? Y or y:";
-        std::cin>>choice;
-        if (choice=='Y' || choice == 'y'){
-           std::cout<<"\n Enter Encoding :";
-           dfa_encoding="";
-           std::cin>>dfa_encoding;
-           TEST_EDFA(dfa_encoding);
-        }else{
-           bye=1;
-        }
-    }
-
+    DFA imraaz("{q0,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10},{0,1},{(q0,0,q8),(q0,1,q2),(q1,0,q0),(q1,1,q10),(q2,0,q0),(q2,1,q6),(q3,0,q2),(q3,1,q1),(q4,0,q5),(q4,1,q10),(q5,0,q4),(q5,1,q3),(q6,0,q2),(q6,1,q2),(q7,0,q6),(q7,1,q2),(q8,0,q3),(q8,1,q0),(q9,0,q10),(q9,1,q5),(q10,0,q9),(q10,1,q8)},q0,{q4,q7}"); 
+    imraaz.print_transitions();
+    Edfa(imraaz);
     system("PAUSE");
     return 0;
-}
-
-int TEST_EDFA(std::string encoding){
-    DFA test_dfa(encoding);
-    std::cout<<"\n\n\n---------------------------------------\n";
-    std::cout<<"STRING: "<<encoding<<"\n\n";
-    std::cout<<"States: ";
-    test_dfa.print_vec(test_dfa.get_states(ALL_STATES));
-    std::cout<<"\n";
-
-    std::cout<<"Symbols: ";
-    test_dfa.print_vec(test_dfa.get_states(ALL_SYMBOLS));
-    
-    test_dfa.print_transitions();
-    std::cout<<"\n";
-    
-    std::cout<<"Starting State: q"<<test_dfa.get_init_state()<<"\n";
-    
-    std::cout<<"Accepting States: ";
-    test_dfa.print_vec(test_dfa.get_states(ACCEPT_STATES));
-    std::cout<<"\n";
-    
-    if(Edfa(test_dfa)){
-        std::cout<<"\n\n*****STRING ACCEPTED*****\n\n";
-        std::cout<<"\n---------------------------------------\n\n\n";
-    }else{
-        std::cout<<"\n\n*****STRING REJECTED*****\n\n";
-        std::cout<<"\n---------------------------------------\n\n\n";
-    }
 }
 
 int Edfa(DFA & dfa){
@@ -233,7 +198,7 @@ int Edfa(DFA & dfa){
     out<<dfa.get_init_state(); // INT to STR
     
     open_lst.push_back("q"+out.str()); // Initiall, the open_lst contains only the initial state. (which can be reaches from itself)
-    std::cout<<"S= "; dfa.print_vec(open_lst);
+    dfa.print_vec(open_lst);
     
     for (unsigned i=0; i<open_lst.size(); i++){
         for (unsigned j=0; j<dfa.get_sizeof_states(dfa.get_states(ALL_SYMBOLS)); j++){
@@ -242,14 +207,8 @@ int Edfa(DFA & dfa){
             in_state="q"+out.str();
             if (!state_found(open_lst,in_state)) open_lst.push_back(in_state);
         }
-        std::cout<<"S= "; dfa.print_vec(open_lst); 
+        dfa.print_vec(open_lst);
     }
-    // Iterate through [S] which is Open_lst and check to see if you have any elements in Accepting States
-    for (unsigned i=0; i<open_lst.size(); i++){
-        if(state_found(dfa.get_states(ACCEPT_STATES),open_lst[i]))
-            return 0;
-    }
-    return 1;
 }
 
 int state_found(__VECSTRING lst, std::string state){
