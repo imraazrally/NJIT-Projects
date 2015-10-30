@@ -71,6 +71,7 @@
 		}
 
 		private function getFullNameUsingAbbreviation($varname,$codeval){
+			error_reporting(E_ERROR | E_PARSE);
 			try{
 				$SQL="SELECT valuelabel FROM frequencies WHERE varname=:varname and codevalue=:codevalue";
 				$statement=$this->dbConnection->prepare($SQL);
@@ -80,7 +81,7 @@
 				$result=$statement->fetch(PDO::FETCH_OBJ);
 				return $result->valuelabel;
 			}catch(Exception $e){
-				return "NULL";
+				return $codeval;
 			}
 		}
 

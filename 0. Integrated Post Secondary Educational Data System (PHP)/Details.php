@@ -25,12 +25,12 @@
 	foreach($fieldNames as $field){
 		$attribute=$instituteHandler->getVarTitleUsingVarName($field);
 		$value=$institute[$field];
-		$rows.= "<tr><td bgcolor='#E2EBB7'>$attribute</td><td bgcolor='#EBD9B7'>$value</td></tr>";
+		$rows.= "<tr><td>$attribute</td><td>$value</td></tr>";
 	}
 
 	//Display Institution Name
-	echo("<h1><u>${institute['instnm']}</u></h1>");
+	echo("<div id='instituteName'><u>${institute['instnm']}</u></div>");
 	//Printing Table
-	echo("<table>$rows</table>");
+	echo("<table class='table-striped'>$rows</table>");
 ?>
 

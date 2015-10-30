@@ -8,9 +8,9 @@
 	//Retrieveing a List of Institute Names and Id's from the database
 	$listOfInstituteNames=$InstituteHandler->getListOfInstituteNamesAndIds();
 	//The URL that displays detailed information when clicked on a peticular institute
-	$instituteDetailsPageUrl=$dbService->getHostName()."Institute.php?";
+	$instituteDetailsPageUrl=$dbService->getHostName()."Details.php?";
+
 
 	//Displaying the clickable links for each institute by passing the ID as a GET parameter
-	foreach($listOfInstituteNames as $institute) echo "<a href='$instituteDetailsPageUrl"."id=$institute->unitid'>$institute->instnm</a><br>";
-	
+	foreach($listOfInstituteNames as $institute) echo "<a href='#' onclick='displayDetails($institute->unitid)'>$institute->instnm</a><br>";
 ?>
