@@ -23,6 +23,14 @@
 			return $listOfInstituteNames;
 		}
 
+		public function getInstituteSummaryById($unitId){
+			$SQL="SELECT unitid, addr, city, stabbr, zip,webaddr FROM base_table WHERE unitid=:unitid";
+			$statement=$this->dbConnection->prepare($SQL);
+			$statement->bindParam(":unitid",$unitId);
+			$statement->execute();
+			return $statement->fetch(PDO::FETCH_OBJ);
+		}
+
 	
 		public function getInstituteInfoByUnitId($id){
 			$SQL="SELECT * FROM base_table WHERE unitid=:unitid";

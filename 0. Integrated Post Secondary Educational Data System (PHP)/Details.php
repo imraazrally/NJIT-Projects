@@ -28,9 +28,8 @@
 		$rows.= "<tr><td>$attribute</td><td>$value</td></tr>";
 	}
 
-	//Display Institution Name
-	echo("<div id='instituteName'><u>${institute['instnm']}</u></div>");
+	
 	//Printing Table
-	echo("<table class='table-striped'>$rows</table>");
+	echo("<table class='w3-table w3-bordered w3-striped w3-large w3-sand'>$rows</table>");
 ?>
 
